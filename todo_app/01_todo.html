@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Web App</title>
+</head>
+<body>
+
+    <p>Todo List Practice 1</p>
+    <input class="inputBox" placeholder="Todo Name" onkeydown="enterKey()">
+    <button onclick="addTodo()">Add</button>
+
+    <div class="displayTodo"></div>
+
+
+    <script>       
+    
+    const myArray = [];
+   
+    renderTodolist()
+
+    function renderTodolist(){
+        let loopList = "";
+
+        for (let i = 0; i < myArray.length; i++) {
+            const todo = myArray[i];
+            const html = `<p>
+                ${todo}
+                <button onclick="
+                loopList.splice(${i}, 1)
+                renderTodolist()
+                ">Delete</button>
+                </p>`;
+            loopList += html;
+         
+        };
+           document.querySelector(".displayTodo").innerHTML = loopList;
+    };
+
+        function addTodo(){
+     
+            const result = document.querySelector(".inputBox");
+            const name = result.value
+
+            myArray.push(name);
+            console.log(myArray);
+            result.value = "";
+
+            renderTodolist();
+        };
+
+
+        function enterKey(){
+            if (event.key === "Enter"){
+                addTodo();
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

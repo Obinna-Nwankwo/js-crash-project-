@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 06</title>
+</head>
+<body>
+
+    <button class="heads" onclick='button("Heads")'>Heads</button>
+
+    <button class="tails" onclick="button('Tails')">Tails</button>
+
+    <p class="js_filp_button"></p>
+
+    <input class="inputBox" placeholder="Name" onkeydown="clickButton()">
+    <button onclick="nameValue()">Submit</button>
+    <p class="displayName"></p>
+
+    <input  class="textInput" placeholder="Calculate"  onkeydown="clickButton1()">
+    <button onclick="calculate()">Calculate</button>
+    <p class="displayResult"></p>
+
+    <input class="text" placeholder="Key charge" oninput="onKey()">
+    <p class="textName"></p>
+
+    <script>
+      function button(userChose) {
+        const result = `Your chose is : ${userChose}`;
+
+       document.querySelector(".js_filp_button").innerHTML = result
+    };
+
+function nameValue(){
+    const inputElement = document.querySelector(".inputBox").value;
+    document.querySelector(".displayName").innerHTML = ` Your name is :  ${ inputElement}`;
+};
+
+function clickButton (){
+    if (event.key === "Enter"){
+        nameValue()
+    }
+};
+
+function calculate(){
+    const result   = document.querySelector(".textInput");
+    let cost = Number(result.value);
+
+    if (cost < 40) {
+        cost += 10
+    }
+    console.log(cost);
+    document.querySelector(".displayResult").innerHTML = `$${cost}`;
+};
+
+function clickButton1() {
+    if (event.key === "Enter"){
+        calculate()
+    }
+};
+
+function onKey() {
+    const textElement = document.querySelector(".text").value
+    document.querySelector(".textName").innerHTML = textElement
+    
+};
+    //   function button2() {
+    //          document.querySelector("js_filp_button").innerHTML = `You chose : heads`;
+
+    //      if (tailsButton.innerHTML === "Tails") {
+    //             console.log("me")
+    //         }
+    //     };
+
+
+    
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multipule Project</title>
+
+    <style>
+        .subscribe {
+            border: none;
+            background: black;
+            padding: 10px 30px;
+            border-radius: 10px;            
+            color: #fff;
+            cursor: pointer;
+        }
+       .subscribed {
+        background: rgba(255, 0, 0, 0.278);
+        color: #000;
+       }
+
+        .calaulate {
+            border: none;
+            background: green;
+            padding: 12px 30px;
+            border-bottom-right-radius: 10px ;          
+            border-top-right-radius: 10px;    
+            color: #fff;
+            cursor: pointer;
+    }
+
+    .js_input {
+        padding: 10px;
+        
+    }
+
+    </style>
+</head>
+<body>
+
+    <p>YouTube Subscribe Button</p>
+    <button class="subscribe_button subscribe" onclick="   
+            subscribe()
+            ">Subscribe</button>
+
+    <p>Rock Paper Scissors</p>
+    <a href="05_dom_project.html">Click Here</a>
+
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 =  +$10 shipping</p>
+    <p>Order over $40 = FREE shipping</p>
+
+    <input class="js_input" placeholder="Cost of shipping" onkeydown="
+            onKeyListing(event)">
+    
+    <button  class="calaulate" onclick="
+    calculate()    
+    ">Calculate</button>
+
+    <p class="result"></p>
+    
+
+
+    <script>
+
+        function subscribe(){
+            const buttonElement = document.querySelector('.subscribe_button');
+            if (buttonElement.innerHTML === 'Subscribe') {
+                buttonElement.innerHTML // You can as well use innText  instead of innerHTML
+                    = 'Subscribed';
+                    buttonElement.classList.add("subscribed")
+            } else {
+                buttonElement.innerHTML = 'Subscribe';
+                buttonElement.classList.remove("subscribed")
+                
+            }
+        }; 
+
+        function calculate(){
+            const inputCost = document.querySelector(".js_input");
+            let cost = Number( inputCost.value );
+
+            if (cost < 40 && cost > 0) {
+                cost += 10
+                document.querySelector(".result").innerHTML = `You will be charge : $${cost}`
+        
+            } else if (cost < 0) {
+                   document.querySelector(".result").innerHTML = `Error: cost cannot be less than  $0`
+            };
+  
+            
+        };
+
+        function onKeyListing(event){
+            if (event.key === "Enter") {
+                calculate()
+            }
+        }
+
+        window
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="js_button">Test</button>
+    <button class="add">Add to Cart</button>
+    <button class="request">Request now</button>
+    <button class="schedule">Schedule for later</button>
+    <br><br><br><hr>
+    <button class="game" onclick="gaming()">Game</button>
+    <button class="game" onclick="gaming()">Music</button>
+    <button class="game" onclick="gaming()">Tech</button>
+
+    <script>
+        const result = document.querySelector(".js_button");
+          const total = result.classList.contains("js_button");
+          console.log(result);
+          console.log(total);
+
+
+
+    function gaming(){
+        const result = document.querySelector(".game")
+
+          if (result.classList.contains("game")){
+               result.classList.add("is_game")
+
+          } else {
+            result.classList.remove("is_game")
+          }
+        };
+
+    </script>
+    
+</body>
+</html>

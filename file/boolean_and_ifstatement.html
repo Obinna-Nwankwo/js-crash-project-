@@ -1,0 +1,65 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booleans and if statement</title>
+</head>
+<body>
+
+<script>
+    // true
+    // false
+
+    // console.log(3 > 5 -5);
+
+    // const age = 12;
+    // if (false) {
+    //     console.log('hello');
+    // }else{
+    //     console.log('else');
+    // }
+
+    // if (age >= 18) {
+    //     console.log('you can drive');
+    // }else if  (age >= 14) {
+    //     console.log('all most there');
+    // }else{
+    //     console.log('you can not drive ');
+    // }
+
+    // this is the falsey values
+    // false = 0, '', NaN, undefined, null
+    // any value not in this list is truthy
+
+    /*if (0) {
+            console.log("truthy");
+    }
+    
+    const cartQuantity = 2;
+    if (cartQuantity) {
+        console.log('cart has products');
+    }
+    
+    console.log(!0);
+    
+    console.log('text' * 5);
+    const variable = undefined;
+    console.log(variable);*/
+
+    const result = 0 ? "truthy" : "falsy"; //Ternary Operator ? :
+    console.log(result)
+
+    false && console.log("hello"); // Guard Operator &&
+
+    const message = 5 && "Hello"; // Guard Operator &&
+    console.log(message);
+
+    const currency = undefined || "usd";   //Default Operator ||
+    console.log(currency);
+
+</script>
+</body>
+</html>
