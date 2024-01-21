@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font icon link and css -->
+    <link rel="stylesheet" href="all.css">
+    <script src="all.js"></script>
+</head>
+<body>
+         <header>
+            <h1>Nwankwo's Todo List</h1>
+         </header>
+
+         <form action="">
+            <input type="text" class="todoInput">
+            <button class="todoButton">
+                <i class="fas fa-plus-square"></i>
+            </button>
+
+            <div class="select">
+                <select name="todos" class="filter-todo">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </div>
+         </form>
+
+         <div class="todoContainer">
+            <ul class="todoList"></ul>
+         </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
